@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" th:href="@{/style.css}">
+	</link>
 </head>
+
 <body>
 	<h1>チャットルーム</h1>
+	<hr>
+	<form class="chat" method="post" action="#" th:action="@{/view}" th:object="${chat}">
+		<input id="text-name" type="text" th:field="*{name}" placeholder="あなたの名前" />
+		<span id="separator">:</span>
+		<input id="text-comment" type="text" th:field="*{comment}" placeholder="コメント" />
+		<input type="submit" value="投稿" />
+	</form>
+
+	<hr>
+	<div th:each="chat :${chatList}" class=chat-bubble>
+		<div class="chat-name" th:text="${chat.name}">名前</div>
+		<div class="chat-comment" th:text="${chat.comment}">コメント</div>
+		<br>
+	</div>
+
+
+	<hr>
 	<a href="/home">トップページに戻る</a>
 </body>
+
 </html>

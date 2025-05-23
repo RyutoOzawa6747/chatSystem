@@ -1,1 +1,12 @@
 INSERT INTO chat(name,comment) VALUES ('小澤龍斗','こんにちは');
+INSERT INTO chat(name,comment) VALUES ('1号','いちこめ');
+INSERT INTO chat(name,comment) VALUES ('2号','にこめ');
+INSERT INTO chat(name,comment) VALUES ('3号','さんこめ');
+INSERT INTO chat(name,comment) VALUES ('5号','ごこめ');
+INSERT INTO chat(name,comment) VALUES ('4号','↓おまえはよんこめ');
+INSERT INTO chat(name,comment) VALUES ('6号','ろっこめ');
+INSERT INTO chat(name,comment) VALUES ('7号','ラッキーセブン！！！');
+INSERT INTO chat(name,comment) VALUES ('8号','パチンコのはち！');
+INSERT INTO chat(name,comment) VALUES ('9号','九死に一生だ');
+INSERT INTO chat(name,comment) VALUES ('10号','十人十色ですね');
+INSERT INTO chat(name,comment) VALUES ('11号','イナズマイレブン');

@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.chat {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	height: 48px;
+	font-size: 100px;
+}
+
+#text-name {
+	width: 256px;
+}
+
+#text-comment {
+	width: 1024px;
+}
+
+#separator{
+	font-size: 24px;
+}
+
+.chat-bubble {
+    margin: 10px 0;
+}
+
+.chat-name {
+    font-size: 12px;
+    color: #666;
+    margin-left: 10px;
+}
+
+.chat-comment {
+    position: relative;
+    background: #f0f0f0;
+    border-radius: 15px;
+    padding: 10px 15px;
+    display: inline-block;
+    max-width: 300px;
+    font-size: 16px;
+    margin-left: 30px;
+}
+
+/* 吹き出しのしっぽ */
+.chat-comment::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -30px;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-right: 20px solid #f0f0f0;
+	border-top:5px;
+	transform: rotate(20deg);
+}

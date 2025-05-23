@@ -2,7 +2,7 @@ package com.example.demo.chat;
 
 public class Chat {
 	private String name;
-	private String commnet;
+	private String comment;
 
 	public String getName() {
 		return name;
@@ -12,11 +12,11 @@ public class Chat {
 		this.name = name;
 	}
 
-	public String getCommnet() {
-		return commnet;
+	public String getComment() {
+		return comment;
 	}
 
-	public void setCommnet(String commnet) {
-		this.commnet = commnet;
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 }
