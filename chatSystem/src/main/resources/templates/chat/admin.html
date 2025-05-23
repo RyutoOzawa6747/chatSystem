@@ -12,12 +12,14 @@
 	<hr>
 	<table class="admin-table">
 		<tr>
+			<th class="admin-th">id</th>
 			<th class="admin-th">名前</th>
 			<th class="admin-th">コメント</th>
 			<th class="admin-th"></th>
 			<th class="admin-th"></th>
 		</tr>
 		<tr th:each="list:${chatList}">
+			<td class="admin-td" th:text="${list.id}">id</td>
 			<td class="admin-td" th:text="${list.name}">名前</td>
 			<td class="admin-td" th:text="${list.comment}">コメント</td>
 			<form th:action="@{/edit/{id}(id=${list.id})}">
