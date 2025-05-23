@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	
+	<h1>編集ページ</h1>
+	<form method="post" th:action="@{/edit/exe}" th:object="${chat}">
+		<p>id:<span th:text="*{id}"></span></p>
+		<input type="hidden" name="id" th:value="*{id}">
+		<input type="text" name="name" th:value="*{name}" /> 
+		<input type="text" name="comment" th:value="*{comment}" /> 
+		<input type="submit" value="保存して戻る">
+	</form>
+	
+	
+	
+</body>
+</html>

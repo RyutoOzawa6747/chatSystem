@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -47,4 +48,42 @@ public class ChatController {
 
 		return "redirect:/view";
 	}
+	
+	@RequestMapping("/admin")
+	public String edit(Model model) {
+		//データ一覧を取得
+		List<EntChat> list = chatdao.searchDb();
+		model.addAttribute("chatList",list);
+		
+		return "/chat/admin";
+	}
+	
+	@GetMapping("/del/{id}")
+	public String destroy(@PathVariable Long id) {
+		System.out.println("データの削除を実行");
+		chatdao.deleteDb(id);
+		
+		return "redirect:/admin";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String edit(@PathVariable Long id,Model model) {
+		//idからデータを特定
+		EntChat chat = chatdao.searchDbOne(id);
+		
+		model.addAttribute("chat",chat);
+		
+		return "chat/edit";
+	}
+	
+	@PostMapping("/edit/exe")
+	public String editExe(EntChat entchat) {
+		System.out.println("id:"+entchat.getId());
+		
+		//データの更新を実行
+		chatdao.updateDb(entchat);
+		return "redirect:/admin";
+	}
+	
+	
 }
