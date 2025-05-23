@@ -1,0 +1,1 @@
+INSERT INTO chat(name,comment) VALUES ('小澤龍斗','こんにちは');
